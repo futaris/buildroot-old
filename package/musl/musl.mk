@@ -4,8 +4,22 @@
 #
 ################################################################################
 
-MUSL_VERSION = 1.1.21
-MUSL_SITE = http://www.musl-libc.org/releases
+ifeq ($(BR2_RISCV_64),y)
+MUSL_VERSION = 8fcd25578fa08d4eeae68a21cb36f2c5f39c29d5
+MUSL_SITE = $(call github,agentdavo,riscv-musl,$(MUSL_VERSION))
+BR_NO_CHECK_HASH_FOR += $(MUSL_SOURCE)
+endif
+
+ifeq ($(BR2_RISCV_32),y)
+MUSL_VERSION = 4aad479afb71a7607c131eba99f8c4fb3a47c68f
+MUSL_SITE = $(call github,agentdavo,riscv-musl,$(MUSL_VERSION))
+BR_NO_CHECK_HASH_FOR += $(MUSL_SOURCE)
+endif
+
+# MUSL_VERSION = 1.1.21
+# MUSL_SITE = http://www.musl-libc.org/releases
+# endif
+
 MUSL_LICENSE = MIT
 MUSL_LICENSE_FILES = COPYRIGHT
 
