@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RISCV_PK_VERSION = 706cc77c369fd3e4734b5a6aa813d421347f1814
+RISCV_PK_VERSION = ac2c910b18c3e36cfd85080472e78ad2fe484325
 RISCV_PK_SITE = git://github.com/riscv/riscv-pk.git
 RISCV_PK_LICENSE = BSD-3-Clause
 RISCV_PK_LICENSE_FILES = LICENSE
